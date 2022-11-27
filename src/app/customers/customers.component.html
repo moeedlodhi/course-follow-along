@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Welcome to the Customers Page</h1>
+    <hr>
+    <button (click)="addNewCustomer($event)" class="btn btn-primary">Add customer</button>
+    <p *ngIf="show_customer; else showThis">New customer added</p>
+    <ng-template #showThis>
+        <p>No new customer</p>
+    </ng-template>
+    <p [ngStyle]="{'backgroundColor':show_customer===true?'green':'red'}">This is tag 1</p>
+    <p [ngStyle]="{'backgroundColor': setColor()}">This is tag 2</p>
+    <p [style.background-color]="show_customer===true?'blue':'pink'">This is red</p>
+
+    <p [ngClass]="{'red-class':(show_customer===true || is_disabled===true)}">This is my Class 1</p>
+    <p [ngClass]="show_customer===true?'red-class':'green-class'">This is my Class 2</p>
+
+    <app-customer></app-customer>
+    <p *ngFor="let item of customerArray;index as i">{{item.name}}----{{i}}</p>
+</div>
+
