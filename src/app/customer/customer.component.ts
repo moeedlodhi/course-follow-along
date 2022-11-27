@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-customer',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class CustomerComponent implements OnInit {
 
   title:string = 'customer page';
+  @Input() customer:any
 
   constructor() { }
 
