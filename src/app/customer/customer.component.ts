@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-customer',
@@ -9,10 +9,15 @@ export class CustomerComponent implements OnInit {
 
   title:string = 'customer page';
   @Input() customer:any
+  @Output() customerChanged = new EventEmitter<{}>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  listenClick(){
+    this.customerChanged.emit(this.customer)
   }
 
 }

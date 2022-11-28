@@ -13,7 +13,7 @@
     <p [ngClass]="{'red-class':(show_customer===true || is_disabled===true)}">This is my Class 1</p>
     <p [ngClass]="show_customer===true?'red-class':'green-class'">This is my Class 2</p>
 
-    <app-customer *ngFor="let customer of customerArray" [customer]="customer"></app-customer>
+    <app-customer *ngFor="let customer of customerArray" [customer]="customer" (customerChanged)="listenToChanges($event)"></app-customer>
     <!-- <p *ngFor="let customer of customerArray;index as i">{{customer.name}}----{{i}}</p> -->
 </div>
 

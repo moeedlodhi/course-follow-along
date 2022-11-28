@@ -17,7 +17,7 @@ export class CustomersComponent {
     addNewCustomer(event:any){
         this.newCustomer = ' '
         this.show_customer = !this.show_customer;
-        this.customerArray.push({"name":"moeed", "age":28})
+        this.customerArray.push({"id":0, "name":"moeed", "age":28})
     }
 
     updateCustomer(event:any){
@@ -27,5 +27,11 @@ export class CustomersComponent {
 
     setColor(){
         return this.show_customer===true?'red':'green'
+    }
+
+    listenToChanges(event:any){
+        event.id +=1
+        this.customerArray[-1] = event
+        console.log(this.customerArray)
     }
 }
