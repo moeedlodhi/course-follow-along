@@ -32,6 +32,5 @@ export class CustomersComponent {
     listenToChanges(event:any){
         event.id +=1
         this.customerArray[-1] = event
-        console.log(this.customerArray)
     }
 }

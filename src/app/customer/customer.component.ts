@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-customer',
@@ -8,7 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CustomerComponent implements OnInit {
 
   title:string = 'customer page';
-  @Input() customer:any
+  @Input() customer:any = {"id": '', name: '', age: ''}
   @Output() customerChanged = new EventEmitter<{}>();
 
   constructor() { }
