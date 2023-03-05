@@ -13,7 +13,17 @@
     <p [ngClass]="{'red-class':(show_customer===true || is_disabled===true)}">This is my Class 1</p>
     <p [ngClass]="show_customer===true?'red-class':'green-class'">This is my Class 2</p>
 
-    <app-customer *ngFor="let customer of customerArray" [customer]="customer" (customerChanged)="listenToChanges($event)"></app-customer>
+    <div *ngFor="let customer of customerArray; index as i">
+        <app-customer [customer]="customer" (customerChanged)="listenToChanges($event)" [test]="test">
+
+        </app-customer>
+        <button class="btn btn-danger" (click)="onDelete(i)"> Delete</button>
+    </div>
+    <!-- <app-customer [test]="test">
+        <h1 #Projected>This content was projected</h1>
+    </app-customer> -->
     <!-- <p *ngFor="let customer of customerArray;index as i">{{customer.name}}----{{i}}</p> -->
 </div>
+
+<h1 appHighlight [text]="'Welcome Bob'">Welcome</h1>
 
